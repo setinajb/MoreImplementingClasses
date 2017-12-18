@@ -227,8 +227,8 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # --------------------------------------------------------------
-        self.startreset = self.start
-        self.endreset = self.end
+        # self.startreset = self.start
+        # self.endreset = self.end
 
         self.start = start.clone()
         self.end = end.clone()
@@ -411,7 +411,7 @@ class Line(object):
           :rtype: float
         """
         # --------------------------------------------------------------
-        # TODO: 6.
+        # DONE: 6.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -422,7 +422,7 @@ class Line(object):
         if self.start.x == self.end.x:
             return math.inf
         elif self.start.y == self.end.y:
-            return 0
+            return -0.0
         else:
             slope = (self.start.y - self.end.y) / (self.start.x - self.end.x)
             return slope
@@ -632,7 +632,7 @@ class Line(object):
           :rtype: bool
         """
         # --------------------------------------------------------------
-        # TODO: 12.
+        # DONE: 12.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -666,13 +666,13 @@ class Line(object):
         # and (usually) adequate to distinguish numbers that really
         # are different from each other.
         ################################################################
-        # slope1 = round(self.slope(), 12)
-        # slope2 = round(line2.slope(), 12)
-        #
-        # if slope1 == slope2:
-        #     return True
-        # else:
-        #     return False
+        slope1 = round(self.slope(), 12)
+        slope2 = round(line2.slope(), 12)
+
+        if slope1 == slope2:
+            return True
+        else:
+            return False
 
     def reset(self):
         """
