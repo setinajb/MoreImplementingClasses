@@ -91,7 +91,6 @@ class Point(object):
         self.y = y
         numclones = 0
 
-
     def __repr__(self):
         """
         Returns a string representation of this Point.
@@ -230,10 +229,11 @@ class Line(object):
         # self.startreset = self.start
         # self.endreset = self.end
 
+        self.resetstart = start
+        self.resetend = end
         self.start = start.clone()
         self.end = end.clone()
         self.numclones = 0
-
 
     def __repr__(self):
         """
@@ -345,7 +345,6 @@ class Line(object):
         # --------------------------------------------------------------
         self.numclones += 1
         return Line(self.start.clone(), self.end.clone())
-
 
     def reverse(self):
         """
@@ -604,7 +603,6 @@ class Line(object):
         # --------------------------------------------------------------
         return self.start.halfway_to(self.end)
 
-
     def is_parallel(self, line2):
         """
         What comes in:
@@ -704,7 +702,7 @@ class Line(object):
             print(line2)  # Should print: Line[(0, 1), (10, 20)]
         """
         # --------------------------------------------------------------
-        # TODO: 13.
+        # DONE: 13.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -713,6 +711,9 @@ class Line(object):
         #        They include the Example in the above doc-string.
         # --------------------------------------------------------------
         # Line(self.startreset, self.endreset)
+
+        self.start = self.resetstart
+        self.end = self.resetend
 
 
 ########################################################################
